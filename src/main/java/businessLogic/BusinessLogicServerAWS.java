@@ -3,10 +3,12 @@ package businessLogic;
 import javax.xml.ws.Endpoint;
 
 import configuration.ConfigXML;
+import dataAccess.DataAccess;
 
 public class BusinessLogicServerAWS {
 		
 	public static void main(String args[]){
+		DataAccess dbManager = new DataAccess();
 
 		String service;
 		
@@ -25,7 +27,7 @@ public class BusinessLogicServerAWS {
 
 			service= "http://"+c.getBusinessLogicNode() +":"+ c.getBusinessLogicPort()+"/ws/"+c.getBusinessLogicName();
 				
-			Endpoint.publish(service, new BLFacadeImplementation());
+			Endpoint.publish(service, new BLFacadeImplementation(dbManager));
 
 			System.out.println("\n\nRunning service at:\n\t" + service);
 			System.out.println("\n\n\nPress button to exit this server... ");

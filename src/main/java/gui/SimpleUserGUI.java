@@ -8,6 +8,7 @@ import domain.RegularUser;
 import domain.User;
 import businessLogic.BLFacade;
 import businessLogic.BLFacadeImplementation;
+import dataAccess.DataAccess;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -49,12 +50,13 @@ public class SimpleUserGUI extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		DataAccess dbManager = new DataAccess();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					SimpleUserGUI frame = new SimpleUserGUI();
 					frame.setVisible(true);
-					frame.setBusinessLogic(new BLFacadeImplementation());
+					frame.setBusinessLogic(new BLFacadeImplementation(dbManager));
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

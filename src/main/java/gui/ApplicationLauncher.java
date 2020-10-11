@@ -9,6 +9,7 @@ import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 
 import configuration.ConfigXML;
+import dataAccess.DataAccess;
 import businessLogic.BLFacade;
 import businessLogic.BLFacadeImplementation;
 
@@ -33,9 +34,10 @@ public class ApplicationLauncher {
 			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
 
 			if (c.isBusinessLogicLocal()) {
-				appFacadeInterface=new BLFacadeImplementation();
-
-			}
+				DataAccess da= new
+				DataAccess(c.getDataBaseOpenMode().equals("initialize"));
+				appFacadeInterface=new BLFacadeImplementation(da);
+				}
 
 			else { //If remote
 				String serviceName= "http://"+c.getBusinessLogicNode() +":"+ c.getBusinessLogicPort()+"/ws/"+c.getBusinessLogicName()+"?wsdl";

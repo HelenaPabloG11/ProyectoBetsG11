@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import configuration.ConfigXML;
+import dataAccess.DataAccess;
 
 import javax.swing.JTextArea;
 import javax.xml.ws.Endpoint;
@@ -49,6 +50,7 @@ public class BusinessLogicServer extends JDialog {
 
 
 	public BusinessLogicServer() {
+		DataAccess dbManager = new DataAccess();
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosed(WindowEvent arg0) {
@@ -107,7 +109,7 @@ public class BusinessLogicServer extends JDialog {
 				
 				service= "http://"+c.getBusinessLogicNode() +":"+ c.getBusinessLogicPort()+"/ws/"+c.getBusinessLogicName();
 				
-				Endpoint.publish(service, new BLFacadeImplementation());
+				Endpoint.publish(service, new BLFacadeImplementation(dbManager));
 				
 				
 			}

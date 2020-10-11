@@ -72,11 +72,12 @@ public class LoginGUI extends JFrame {
 	 */
 	//k
 	public static void main(String[] args) {
+		DataAccess dbManager = new DataAccess();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					LoginGUI frame = new LoginGUI();
-					frame.setBusinessLogic(new BLFacadeImplementation());
+					frame.setBusinessLogic(new BLFacadeImplementation(dbManager));
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

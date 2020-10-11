@@ -13,6 +13,7 @@ import com.toedter.calendar.JCalendar;
 import businessLogic.BLFacade;
 import businessLogic.BLFacadeImplementation;
 import configuration.UtilDate;
+import dataAccess.DataAccess;
 import domain.Admin;
 import domain.RegularUser;
 import domain.User;
@@ -84,12 +85,13 @@ public class ErregistratuGUI extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		DataAccess dbManager = new DataAccess();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					ErregistratuGUI frame = new ErregistratuGUI();
 					frame.setVisible(true);
-					frame.setBusinessLogic(new BLFacadeImplementation());
+					frame.setBusinessLogic(new BLFacadeImplementation(dbManager));
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
