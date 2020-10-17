@@ -1,0 +1,96 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2020-10-17 11:57:24 #1 store] 
+Database '/Users/admin/Desktop/eclipse-workspace/upv.if.bets/src/main/resources/bets.temp' has been recovered (tr. 781-781)
+
+[2020-10-17 11:57:24 #2 store] 
+Database '/Users/admin/Desktop/eclipse-workspace/upv.if.bets/src/main/resources/bets.temp' is opened by 94818@MacBook-Pro-de-Admin-2.local
+
+[2020-10-17 11:57:24 #3 type] 
+Type domain.Question is not enhanced.
+
+[2020-10-17 11:57:24 #4 type] 
+Type domain.Event is not enhanced.
+
+[2020-10-17 11:57:24 #5 type] 
+Type domain.User is not enhanced.
+
+[2020-10-17 11:57:24 #6 type] 
+Type domain.Admin is not enhanced.
+
+[2020-10-17 11:57:24 #7 type] 
+Type domain.RegularUser is not enhanced.
+
+[2020-10-17 11:57:24 #8 type] 
+Type domain.Kuota is not enhanced.
+
+[2020-10-17 11:57:24 #9 type] 
+Type domain.Bet is not enhanced.
+
+[2020-10-17 11:57:24 #10 type] 
+Type domain.Movement is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2020-10-17 11:59:22 #1 store] 
+Database '/Users/admin/Desktop/eclipse-workspace/upv.if.bets/src/main/resources/bets.temp' has been recovered (tr. 782-787)
+
+[2020-10-17 11:59:22 #2 store] 
+Database '/Users/admin/Desktop/eclipse-workspace/upv.if.bets/src/main/resources/bets.temp' is opened by 94843@MacBook-Pro-de-Admin-2.local
+
+[2020-10-17 11:59:23 #3 type] 
+Type domain.Question is not enhanced.
+
+[2020-10-17 11:59:23 #4 type] 
+Type domain.Event is not enhanced.
+
+[2020-10-17 11:59:23 #5 type] 
+Type domain.User is not enhanced.
+
+[2020-10-17 11:59:23 #6 type] 
+Type domain.Admin is not enhanced.
+
+[2020-10-17 11:59:23 #7 type] 
+Type domain.RegularUser is not enhanced.
+
+[2020-10-17 11:59:23 #8 type] 
+Type domain.Kuota is not enhanced.
+
+[2020-10-17 11:59:23 #9 type] 
+Type domain.Bet is not enhanced.
+
+[2020-10-17 11:59:23 #10 type] 
+Type domain.Movement is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2020-10-17 12:02:45 #1 store] 
+Database '/Users/admin/Desktop/eclipse-workspace/upv.if.bets/src/main/resources/bets.temp' has been recovered (tr. 788-793)
+
+[2020-10-17 12:02:45 #2 store] 
+Database '/Users/admin/Desktop/eclipse-workspace/upv.if.bets/src/main/resources/bets.temp' is opened by 94892@MacBook-Pro-de-Admin-2.local
+
+[2020-10-17 12:02:46 #3 type] 
+Type domain.Question is not enhanced.
+
+[2020-10-17 12:02:46 #4 type] 
+Type domain.Event is not enhanced.
+
+[2020-10-17 12:02:46 #5 type] 
+Type domain.User is not enhanced.
+
+[2020-10-17 12:02:46 #6 type] 
+Type domain.Admin is not enhanced.
+
+[2020-10-17 12:02:46 #7 type] 
+Type domain.RegularUser is not enhanced.
+
+[2020-10-17 12:02:46 #8 type] 
+Type domain.Kuota is not enhanced.
+
+[2020-10-17 12:02:46 #9 type] 
+Type domain.Bet is not enhanced.
+
+[2020-10-17 12:02:46 #10 type] 
+Type domain.Movement is not enhanced.
+
