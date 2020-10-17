@@ -12,6 +12,7 @@ import javax.persistence.Query;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import businessLogic.BLFacadeImplementation;
 import configuration.ConfigXML;
 import dataAccess.DataAccess;
 import domain.Event;
@@ -28,8 +29,8 @@ class LoginTest {
 	// sut- System Under Test
 	DataAccess dbManager;
 	protected static EntityManager  db;
-	//BLFacadeImplementation sut = new BLFacadeImplementation(dbManager);
 	private DataAccess sut = new DataAccess(ConfigXML.getInstance().getDataBaseOpenMode().equals("initialize"));
+	private BLFacadeImplementation bl = new BLFacadeImplementation(sut);
 	private TestFacadeImplementation testBL = new TestFacadeImplementation();
 
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -62,8 +63,8 @@ class LoginTest {
 			testBL.addUser(userName, userPass, firstName, lastName, userId, birthDate,
 					email, bankAccount, phoneNumber, address);
 			
-			User expected = sut.getUserByUsername("pablo");
-			User obtained = sut.login(un, pass);
+			User expected = bl.getUserByUsername("pablo");
+			User obtained = bl.login(un, pass);
 			
 			
 			// invoke System Under Test (sut)
@@ -102,7 +103,7 @@ class LoginTest {
 			
 			
 			// invoke System Under Test (sut)
-			assertThrows(IncorrectPassException.class, () -> sut.login(un, pass));
+			assertThrows(IncorrectPassException.class, () -> bl.login(un, pass));
 			
 
 		} catch (ParseException e) {
@@ -137,7 +138,7 @@ class LoginTest {
 			
 			
 			// invoke System Under Test (sut)
-			assertThrows(UserDoesNotExistException.class, () -> sut.login(un, pass));
+			assertThrows(UserDoesNotExistException.class, () -> bl.login(un, pass));
 			
 
 		} catch (ParseException e) {
