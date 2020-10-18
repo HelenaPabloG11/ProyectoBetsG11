@@ -6,6 +6,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.persistence.EntityManager;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +20,8 @@ import exceptions.NoMoneyException;
 import test.businessLogic.TestFacadeImplementation;
 
 class RestMoneyTest {
-	
+	DataAccess dbManager;
+	protected static EntityManager  db;
 	private DataAccess sut = new DataAccess(ConfigXML.getInstance().getDataBaseOpenMode().equals("initialize"));
 	private BLFacadeImplementation bl = new BLFacadeImplementation(sut);
 	private TestFacadeImplementation testBL = new TestFacadeImplementation();
@@ -37,7 +40,7 @@ class RestMoneyTest {
 	
 	@Test
 	@DisplayName("LessMoneyThanKop")
-	void LessMoneyThanKop() throws ParseException {
+	void LessMoneyThanKop() throws ParseException,NoMoneyException {
 		try {
 			float kop=24.5f;
 			Date birthDate = date.parse(bd);
@@ -69,7 +72,7 @@ class RestMoneyTest {
 		
 		try{
 			float kop= 34.2f;
-		
+			float kop2=50f;
 			float esperado,obtenido;
 			Date birthDate = date.parse(bd);
 		
@@ -78,11 +81,16 @@ class RestMoneyTest {
 			RegularUser user = new RegularUser(userName, userPass, firstName, lastName, userId, birthDate,
 				email, bankAccount, phoneNumber, address);
 		
-			user.setWallet(50);
+			//user.setWallet(kop2);
+			bl.putMoney(kop2, user);
+			
 			bl.restMoney(kop, user);
-			obtenido=user.getWallet();
-			esperado= 50-kop;
+			
+			obtenido=bl.howMuchMoney(user);
+			esperado= kop2-kop;
+			
 			assertEquals(esperado,obtenido);
+			
 		}catch(ParseException e) {
 			fail("No problems should arise");
 		}finally {
