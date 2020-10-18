@@ -52,10 +52,10 @@
 		<maven.compiler.target>11</maven.compiler.target>
 		<maven.compiler.source>11</maven.compiler.source>
 
-		<sonar.projectKey>Bets01-2021</sonar.projectKey>
-		<sonar.organization>maiteurreta</sonar.organization>
+		<sonar.projectKey>ProyectoBetsG11</sonar.projectKey>
+		<sonar.organization>helenafriveiro</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		<sonar.login>f3113201ed7ed11011493a309fbce8b2700cfa51</sonar.login>
+		<sonar.login>ec3b5401897ccbc281065e98dfaca9694d8a0b48</sonar.login>
 	</properties>
 
 	<!-- https://mvnrepository.com/artifact/junit/junit -->
