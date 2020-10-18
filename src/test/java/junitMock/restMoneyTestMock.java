@@ -76,6 +76,7 @@ class restMoneyTestMock {
 		
 		esperado=wallet-kop;
 		Mockito.doReturn(esperado).when(dataAccess).howMuchMoney(user);
+		sut.restMoney(kop, user);
 		obtenido=sut.howMuchMoney(user);
 		assertEquals(esperado,obtenido);
 		
